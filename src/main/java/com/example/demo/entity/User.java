@@ -1,10 +1,9 @@
-package com.example.demo.user;
+package com.example.demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Entity
+@Table
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,6 +11,7 @@ public class User {
     private String usarName;
     private String password;
 
+    private String email;
     public Long getId() {
         return id;
     }
@@ -20,7 +20,6 @@ public class User {
         this.id = id;
     }
 
-    private String email;
 
     public User() {
     }
