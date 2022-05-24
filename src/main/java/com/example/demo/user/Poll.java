@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table
 public class Poll {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,7 +17,7 @@ public class Poll {
     @ElementCollection
     private List<Integer> hasVoted;
 
-    private double score;
+    private double score;//timestamp
 
     public Poll(int initiator, List<String> comments, List<Integer> hasVoted, double score) {
         this.initiator = initiator;
@@ -28,6 +29,11 @@ public class Poll {
     public Poll(int initiator, List<String> comments, double score) {
         this.initiator = initiator;
         this.comments = comments;
+        this.score = score;
+    }
+
+    public Poll(int initiator, double score) {
+        this.initiator = initiator;
         this.score = score;
     }
 

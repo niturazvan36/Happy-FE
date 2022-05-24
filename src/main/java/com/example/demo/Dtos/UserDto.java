@@ -1,12 +1,8 @@
-package com.example.demo.user;
+package com.example.demo.Dtos;
 
-import javax.persistence.*;
+public class UserDto {
 
-@Entity
-@Table
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
     private String usarName;
     private String password;
@@ -21,20 +17,20 @@ public class User {
     }
 
 
-    public User() {
+    public UserDto() {
     }
 
-    public User(String usarName, String password, String email) {
+    public UserDto(String usarName, String password, String email) {
         this.usarName = usarName;
         this.password = password;
         this.email = email;
     }
 
-    public String getUsarName() {
+    public String getUsarDtoName() {
         return usarName;
     }
 
-    public void setUsarName(String usarName) {
+    public void setUsarDtoName(String usarName) {
         this.usarName = usarName;
     }
 

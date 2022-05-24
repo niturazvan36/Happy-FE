@@ -1,6 +1,6 @@
 package com.example.demo.user;
 
-import com.example.demo.services.UserService;
+import com.example.demo.services.PollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,19 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/user")
-public class UserController {
+@RequestMapping(path = "api/v1/Poll")
 
-    private final UserService userService;
+public class PollControlller {
+
+    private final PollService pollService;
 
     @Autowired
-    public UserController(UserService userService)
-    {
-        this.userService = userService;
-    }
+    public PollControlller(PollService pollService) {this.pollService = pollService;}
 
     @GetMapping
-    public List<User> getUsers(){
-        return userService.getUsers();
+    public List<Poll> getPolls(){
+        return pollService.getPolls();
     }
 }
